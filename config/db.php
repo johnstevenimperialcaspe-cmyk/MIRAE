@@ -8,10 +8,10 @@
 $is_production = (strpos($_SERVER['HTTP_HOST'], 'infinityfreeapp.com') !== false);
 
 if ($is_production) {
-    define('DB_HOST', 'sqlXXX.infinityfree.com'); // REPLACE XXX with your actual host from dashboard
+    define('DB_HOST', 'sqlXXX.infinityfree.com'); // REPLACE XXX with your actual host from dashboard (e.g. sql205)
     define('DB_NAME', 'if0_41920022_mirae_db');   // Your DB name
     define('DB_USER', 'if0_41920022');            // Your Username
-    define('DB_PASS', 'YOUR_PASSWORD');           // REPLACE with your account password
+    define('DB_PASS', 'iINHtgjGvajF');            // Your Password
     define('DB_PORT', '3306');
 } else {
     // Local XAMPP or Railway Fallback
