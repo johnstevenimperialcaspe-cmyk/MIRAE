@@ -17,12 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel_order_id'])) {
     $stmt = $conn->prepare("UPDATE orders SET order_status = 'Cancelled' WHERE id = ? AND customer_id = ? AND order_status = 'Pending'");
     $stmt->bind_param("ii", $orderId, $userId);
     
-    if ($stmt->execute()) {
-        $msg = "Order cancelled successfully.";
+    if ($stmt->execute() && $stmt->affected_rows > 0) {
+        // Success: Redirect to avoid double-submit and show updated status
+        header("Location: orders.php?tab=" . urlencode($statusTab) . "&msg=cancelled");
+        exit();
     } else {
-        $error = "Failed to cancel order.";
+        $error = "Order could not be cancelled. It may have already been processed or cancelled.";
     }
     $stmt->close();
+}
+
+if (isset($_GET['msg']) && $_GET['msg'] === 'cancelled') {
+    $msg = "Order cancelled successfully.";
 }
 
 $pageKey = 'orders';
