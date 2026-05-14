@@ -34,6 +34,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->execute()) $success = 'Address added successfully!';
         else $error = 'Failed to add address.';
         $stmt->close();
+    } elseif (isset($_POST['edit_address'])) {
+        $addrId = (int)$_POST['address_id'];
+        $name = trim($_POST['recipient_name'] ?? '');
+        $phone = trim($_POST['mobile_number'] ?? '');
+        $house = trim($_POST['house_unit_no'] ?? '');
+        $street = trim($_POST['street'] ?? '');
+        $barangay = trim($_POST['barangay'] ?? '');
+        $city = trim($_POST['city_municipality'] ?? '');
+        $province = trim($_POST['province'] ?? '');
+        $zip = trim($_POST['zip_code'] ?? '');
+        $is_default = isset($_POST['is_default']) ? 1 : 0;
+
+        if ($is_default) {
+            $conn->query("UPDATE customer_addresses SET is_default = 0 WHERE customer_id = $userId");
+        }
+
+        $stmt = $conn->prepare("UPDATE customer_addresses SET recipient_name=?, mobile_number=?, house_unit_no=?, street=?, barangay=?, city_municipality=?, province=?, zip_code=?, is_default=? WHERE id=? AND customer_id=?");
+        $stmt->bind_param('ssssssssiii', $name, $phone, $house, $street, $barangay, $city, $province, $zip, $is_default, $addrId, $userId);
+        
+        if ($stmt->execute()) $success = 'Address updated successfully!';
+        else $error = 'Failed to update address.';
+        $stmt->close();
     } elseif (isset($_POST['set_default'])) {
         $addrId = (int) $_POST['address_id'];
         $conn->query("UPDATE customer_addresses SET is_default = 0 WHERE customer_id = $userId");
@@ -140,7 +162,7 @@ $stmt->close();
                             <?php echo htmlspecialchars($addr['zip_code']); ?>
                         </p>
                         <div class="address-actions">
-                            <button class="btn btn-link btn-sm p-0">Edit</button>
+                            <button class="btn btn-link btn-sm p-0" onclick="fillEditModal(<?php echo htmlspecialchars(json_encode($addr)); ?>)">Edit</button>
                             <?php if (!$addr['is_default']): ?>
                                 <form method="post" style="display:inline;">
                                     <input type="hidden" name="address_id" value="<?php echo $addr['id']; ?>">
@@ -158,40 +180,41 @@ $stmt->close();
 
             <div id="addr-modal" class="modal">
                 <div class="modal-content">
-                    <h3 style="margin-top:0;">Add New Address</h3>
-                    <form method="post">
+                    <h3 id="modal-title" style="margin-top:0;">Add New Address</h3>
+                    <form method="post" id="addr-form">
+                        <input type="hidden" name="address_id" id="form-addr-id">
                         <div class="form-grid">
                             <div class="form-group full">
                                 <label>Recipient's Name</label>
-                                <input type="text" name="recipient_name" class="form-control" required>
+                                <input type="text" name="recipient_name" id="form-name" class="form-control" required>
                             </div>
                             <div class="form-group full">
                                 <label>Mobile Number</label>
-                                <input type="text" name="mobile_number" class="form-control" required>
+                                <input type="text" name="mobile_number" id="form-phone" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>House/Unit No.</label>
-                                <input type="text" name="house_unit_no" class="form-control">
+                                <input type="text" name="house_unit_no" id="form-house" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Street</label>
-                                <input type="text" name="street" class="form-control">
+                                <input type="text" name="street" id="form-street" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Barangay</label>
-                                <input type="text" name="barangay" class="form-control">
+                                <input type="text" name="barangay" id="form-barangay" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>City / Municipality</label>
-                                <input type="text" name="city_municipality" class="form-control" required>
+                                <input type="text" name="city_municipality" id="form-city" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Province</label>
-                                <input type="text" name="province" class="form-control">
+                                <input type="text" name="province" id="form-province" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>ZIP Code</label>
-                                <input type="text" name="zip_code" class="form-control">
+                                <input type="text" name="zip_code" id="form-zip" class="form-control">
                             </div>
                         </div>
                         <div class="custom-control custom-checkbox mt-3">
@@ -200,7 +223,7 @@ $stmt->close();
                         </div>
                         <div style="margin-top:25px; display:flex; gap:10px; justify-content: flex-end;">
                             <button type="button" class="btn btn-secondary" onclick="toggleModal(false)">Cancel</button>
-                            <button type="submit" name="add_address" class="btn btn-success">Add Address</button>
+                            <button type="submit" name="add_address" id="form-submit-btn" class="btn btn-success">Add Address</button>
                         </div>
                     </form>
                 </div>
@@ -208,8 +231,44 @@ $stmt->close();
         </main>
     </div>
     <script>
-        function toggleModal(show) {
-            document.getElementById('addr-modal').classList.toggle('active', show);
+        function toggleModal(show, mode = 'add') {
+            const modal = document.getElementById('addr-modal');
+            const title = document.getElementById('modal-title');
+            const btn = document.getElementById('form-submit-btn');
+            const form = document.getElementById('addr-form');
+            
+            if (!show) {
+                modal.classList.remove('active');
+                return;
+            }
+
+            if (mode === 'add') {
+                title.textContent = 'Add New Address';
+                btn.textContent = 'Add Address';
+                btn.name = 'add_address';
+                form.reset();
+                document.getElementById('form-addr-id').value = '';
+            } else {
+                title.textContent = 'Edit Address';
+                btn.textContent = 'Save Changes';
+                btn.name = 'edit_address';
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function fillEditModal(data) {
+            toggleModal(true, 'edit');
+            document.getElementById('form-addr-id').value = data.id;
+            document.getElementById('form-name').value = data.recipient_name;
+            document.getElementById('form-phone').value = data.mobile_number;
+            document.getElementById('form-house').value = data.house_unit_no;
+            document.getElementById('form-street').value = data.street;
+            document.getElementById('form-barangay').value = data.barangay;
+            document.getElementById('form-city').value = data.city_municipality;
+            document.getElementById('form-province').value = data.province;
+            document.getElementById('form-zip').value = data.zip_code;
+            document.getElementById('is_default').checked = data.is_default == 1;
         }
     </script>
     <script src="../js/main.js"></script>
