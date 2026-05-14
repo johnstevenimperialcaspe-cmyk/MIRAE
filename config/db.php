@@ -4,12 +4,23 @@
 // File: config/db.php
 // ============================================================
 
-// Flexible Database Configuration for any Hosting (InfinityFree, Railway, XAMPP)
-define('DB_HOST', getenv('MYSQLHOST') ?: getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: getenv('DB_NAME') ?: 'mirae_db');
-define('DB_USER', getenv('MYSQLUSER') ?: getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: getenv('DB_PASS') ?: ''); 
-define('DB_PORT', getenv('MYSQLPORT') ?: getenv('DB_PORT') ?: '3306');
+// Flexible Database Configuration
+$is_production = (strpos($_SERVER['HTTP_HOST'], 'infinityfreeapp.com') !== false);
+
+if ($is_production) {
+    define('DB_HOST', 'sqlXXX.infinityfree.com'); // REPLACE XXX with your actual host from dashboard
+    define('DB_NAME', 'if0_41920022_mirae_db');   // Your DB name
+    define('DB_USER', 'if0_41920022');            // Your Username
+    define('DB_PASS', 'YOUR_PASSWORD');           // REPLACE with your account password
+    define('DB_PORT', '3306');
+} else {
+    // Local XAMPP or Railway Fallback
+    define('DB_HOST', getenv('MYSQLHOST') ?: getenv('DB_HOST') ?: 'localhost');
+    define('DB_NAME', getenv('MYSQLDATABASE') ?: getenv('DB_NAME') ?: 'mirae_db');
+    define('DB_USER', getenv('MYSQLUSER') ?: getenv('DB_USER') ?: 'root');
+    define('DB_PASS', getenv('MYSQLPASSWORD') ?: getenv('DB_PASS') ?: ''); 
+    define('DB_PORT', getenv('MYSQLPORT') ?: getenv('DB_PORT') ?: '3306');
+}
 define('DB_CHARSET', 'utf8mb4');
 
 // Create connection
