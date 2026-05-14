@@ -177,7 +177,7 @@ if ($result = $conn->query($sql)) {
                                             <button type="submit" class="btn btn-outline-danger btn-sm">Cancel Order</button>
                                         </form>
                                     <?php endif; ?>
-                                    <a href="#" class="btn btn-outline-primary btn-sm">Order Details</a>
+                                    <a href="view_order.php?id=<?php echo $order['id']; ?>" class="btn btn-outline-primary btn-sm">Order Details</a>
                                 </div>
                             </div>
                         </div>
