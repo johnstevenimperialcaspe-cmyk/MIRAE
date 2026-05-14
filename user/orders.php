@@ -8,6 +8,23 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userId = $_SESSION['user_id'];
+
+// Handle Order Cancellation
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel_order_id'])) {
+    $orderId = (int)$_POST['cancel_order_id'];
+    
+    // Security check: Ensure order belongs to user and is still Pending
+    $stmt = $conn->prepare("UPDATE orders SET order_status = 'Cancelled' WHERE id = ? AND customer_id = ? AND order_status = 'Pending'");
+    $stmt->bind_param("ii", $orderId, $userId);
+    
+    if ($stmt->execute()) {
+        $msg = "Order cancelled successfully.";
+    } else {
+        $error = "Failed to cancel order.";
+    }
+    $stmt->close();
+}
+
 $pageKey = 'orders';
 $statusTab = isset($_GET['tab']) ? $_GET['tab'] : 'All';
 
@@ -100,6 +117,13 @@ if ($result = $conn->query($sql)) {
                 <h1>My Orders</h1>
             </div>
 
+            <?php if (isset($msg)): ?>
+                <div class="alert alert-success"><?php echo $msg; ?></div>
+            <?php endif; ?>
+            <?php if (isset($error)): ?>
+                <div class="alert alert-danger"><?php echo $error; ?></div>
+            <?php endif; ?>
+
             <div class="order-tabs">
                 <a href="?tab=All" class="tab-item <?php echo $statusTab === 'All' ? 'active' : ''; ?>">All</a>
                 <a href="?tab=Pending" class="tab-item <?php echo $statusTab === 'Pending' ? 'active' : ''; ?>">Pending</a>
@@ -142,7 +166,10 @@ if ($result = $conn->query($sql)) {
                                 </div>
                                 <div style="display:flex; gap: 10px;">
                                     <?php if ($order['order_status'] === 'Pending'): ?>
-                                        <button class="btn btn-outline-danger btn-sm">Cancel Order</button>
+                                        <form method="POST" onsubmit="return confirm('Are you sure you want to cancel this order?');">
+                                            <input type="hidden" name="cancel_order_id" value="<?php echo $order['id']; ?>">
+                                            <button type="submit" class="btn btn-outline-danger btn-sm">Cancel Order</button>
+                                        </form>
                                     <?php endif; ?>
                                     <a href="#" class="btn btn-outline-primary btn-sm">Order Details</a>
                                 </div>
