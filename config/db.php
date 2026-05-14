@@ -4,16 +4,17 @@
 // File: config/db.php
 // ============================================================
 
-// Use environment variables for production, fallback to local defaults
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'mirae_db');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: ''); // Default XAMPP has no password
+// Use Railway environment variables, fallback to local defaults for XAMPP
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'mirae_db');
+define('DB_USER', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: ''); 
+define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
 define('DB_CHARSET', 'utf8mb4');
 
 // Create connection
 try {
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
     if ($conn->connect_error) {
         throw new Exception($conn->connect_error);
     }
