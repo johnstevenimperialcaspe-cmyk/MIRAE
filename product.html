@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-WASH | Product</title>
+    <link rel="icon" type="image/png" href="images/MD.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="product.css?v=20260413-white" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/loader.css">
+  </head>
+  <body class="product-page">
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+    <header class="top-nav">
+      <div class="logo-area">
+        <a href="index.html">
+          <img
+            src="images/MD.png"
+            alt="e-WASH powered by MIRAE"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a
+            href="product.html"
+            class="active nav-dropdown-trigger"
+            aria-haspopup="true"
+            id="nav-product-trigger"
+            >Product</a
+          >
+          <ul
+            class="nav-dropdown-menu"
+            role="menu"
+            aria-labelledby="nav-product-trigger"
+          >
+            <li role="none">
+              <a href="product.html" role="menuitem">e-WASH</a>
+            </li>
+            <li role="none">
+              <a href="super-sol.html" role="menuitem">Super Sol</a>
+            </li>
+          </ul>
+        </div>
+        <a href="data.html">Data</a>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contacts</a>
+        <a href="user/login.php" class="btn btn-success btn-sm ml-lg-3 px-4 d-none d-lg-inline-block" style="border-radius: 999px;">Sign In</a>
+        <button type="button" class="btn btn-link p-0 position-relative" id="cart-open-btn" aria-label="Open cart">
+          <img src="images/cart.png" alt="" aria-hidden="true" style="width: 24px;" />
+          <span class="badge badge-success badge-pill position-absolute" id="cart-badge" style="top: -5px; right: -5px; font-size: 10px;">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="hero" id="ewash">
+
+      <section class="hero-content">
+        <div class="hero-left">
+          <div class="hero-image-card">
+            <div class="hero-visual">
+              <img
+                src="images/prod.png"
+                alt="e-WASH product visual"
+                class="hero-water-image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <p class="managed-content-subtitle" data-managed-content="product" data-managed-field="subtitle" data-managed-hide-empty></p>
+          <div class="glass feature-safety-glass product-text-card">
+            <p class="feature-safety-text" style="text-indent: 2.5em;" data-managed-content="product" data-managed-field="intro">
+              e-WASH is a disinfectant developed by E-PLAN Co., Ltd., composed of
+              99.83% pure water and 0.17% potassium hydroxide, resulting in a pH
+              level of 12.5. This alkaline environment enables e-WASH to effectively
+              emulsify oils and fats, providing cleansing power comparable to synthetic
+              surfactants, while being gentle on the skin.
+            </p>
+            <p class="feature-safety-text" style="margin-top: 1rem; text-indent: 2.5em;">
+              Additionally, e-WASH has demonstrated the ability to inactivate
+              pathogens such as norovirus, making it suitable for various applications,
+              including disinfection, cleaning, and deodorization.
+            </p>
+            <p class="feature-safety-text" style="margin-top: 1rem; text-indent: 2.5em;">
+              The efficacy of disinfectants can be influenced by several factors,
+              including the presence of organic matter, contact time, and the specific
+              microorganisms targeted. Proper cleaning prior to disinfection is essential,
+              as organic materials like dirt or bodily fluids can shield microorganisms
+              from the disinfectant's action. Ensuring that surfaces remain wet with the
+              disinfectant for the recommended contact time is also crucial for
+              effective microbial inactivation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="products-section">
+      <div class="variants-title-section">
+        <h2 class="variants-title"><span class="variants-title-highlight">e-WASH</span> Available Variants</h2>
+      </div>
+      <div class="products-container">
+
+      <div class="product">
+          <div class="product-card glass">
+              <img src="images/pr1.png" alt="e-WASH 500ml Spray" class="product-fg">
+              <div class="product-actions">
+                  <p class="price">PHP 150.00</p>
+                  <button type="button" class="btn btn-success btn-sm buy-now-btn px-4">Buy Now</button>
+                  <button
+                    type="button"
+                    class="btn cart-btn"
+                    aria-label="Add to cart"
+                    data-cart-id="ewash-001"
+                    data-cart-name="e-WASH 500ml Spray"
+                    data-cart-size="500ml"
+                    data-cart-price="150"
+                    data-cart-image="images/pr1.png"
+                  >
+                      <img src="images/cart.png" alt="Cart">
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <div class="product">
+          <div class="product-card glass">
+              <img src="images/pr1.png" alt="e-WASH 500ml Refill" class="product-fg">
+              <div class="product-actions">
+                  <p class="price">PHP 150.00</p>
+                  <button type="button" class="btn btn-success btn-sm buy-now-btn px-4">Buy Now</button>
+                  <button
+                    type="button"
+                    class="btn cart-btn"
+                    aria-label="Add to cart"
+                    data-cart-id="ewash-002"
+                    data-cart-name="e-WASH 500ml Refill"
+                    data-cart-size="500ml"
+                    data-cart-price="150"
+                    data-cart-image="images/pr1.png"
+                  >
+                      <img src="images/cart.png" alt="Cart">
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <div class="product">
+          <div class="product-card glass">
+              <img src="images/pr1.png" alt="e-WASH 2L Refill" class="product-fg">
+              <div class="product-actions">
+                  <p class="price">PHP 450.00</p>
+                  <button type="button" class="btn btn-success btn-sm buy-now-btn px-4">Buy Now</button>
+                  <button
+                    type="button"
+                    class="btn cart-btn"
+                    aria-label="Add to cart"
+                    data-cart-id="ewash-003"
+                    data-cart-name="e-WASH 2L Refill"
+                    data-cart-size="2L"
+                    data-cart-price="450"
+                    data-cart-image="images/pr1.png"
+                  >
+                      <img src="images/cart.png" alt="Cart">
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <div class="product">
+          <div class="product-card glass">
+              <img src="images/pr1.png" alt="e-WASH 20L BIB" class="product-fg">
+              <div class="product-actions">
+                  <p class="price">PHP 3500.00</p>
+                  <button type="button" class="btn btn-success btn-sm buy-now-btn px-4">Buy Now</button>
+                  <button
+                    type="button"
+                    class="btn cart-btn"
+                    aria-label="Add to cart"
+                    data-cart-id="ewash-004"
+                    data-cart-name="e-WASH 20L BIB"
+                    data-cart-size="20L"
+                    data-cart-price="3500"
+                    data-cart-image="images/pr1.png"
+                  >
+                      <img src="images/cart.png" alt="Cart">
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <div class="product-about-title-section">
+        <h2 class="product-about-title">
+          <strong>About Alkaline Electrolyzed Water "<span>e-WASH</span>"</strong>
+        </h2>
+      </div>
+      <div class="product-about-row">
+        <div class="product-about-gif-wrap">
+          <img src="images/g1.png" alt="Alkaline electrolyzed water illustration" class="product-about-gif" />
+          <h2 class="product-about-title product-mechanism-under-title">
+            <strong>The Mechanism of "<span>e-WASH</span>"</strong>
+          </h2>
+        </div>
+
+        <div class="product-about-info">
+          <div class="product-about-item">
+            <div class="product-about-label">
+              <span>High</span>
+              <span>Safety</span>
+            </div>
+            <div class="product-about-text">
+              99.83% of the ingredients are pure water, so it&apos;s safe and secure.
+            </div>
+          </div>
+
+          <div class="product-about-item">
+            <div class="product-about-label">
+              <span>Eco‑friendly</span>
+            </div>
+            <div class="product-about-text">
+              99.83% pure water so it won&apos;t pollute rivers or oceans.
+            </div>
+          </div>
+
+          <div class="product-about-item">
+            <div class="product-about-label">
+              <span>Excellent</span>
+              <span>Detergency</span>
+            </div>
+            <div class="product-about-text">
+              Cleaning power similar to surfactants.
+            </div>
+          </div>
+
+          <div class="product-about-item">
+            <div class="product-about-label">
+              <span>High Rust</span>
+              <span>Prevention Effect</span>
+            </div>
+            <div class="product-about-text">
+              The rust prevention effect lasts because it suppresses oxidation.
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="product-process-section">
+        <div class="product-process-grid">
+          <div class="glass product-process-card">
+            <div class="product-process-label-row">
+              <div class="product-process-label"><span class="product-process-number">1</span> Penetration</div>
+            </div>
+            <img
+              src="images/pen.png"
+              alt="Penetration process"
+              class="product-process-image"/>
+              <p>Alkaline electrolyzed water penetrates into dirt and stains,
+              loosening the bonds between the contamination and the surface</p>
+          </div>
+
+          <div class="glass product-process-card">
+            <div class="product-process-label-row">
+              <div class="product-process-label"><span class="product-process-number">2</span> Peeling</div>
+            </div>
+            <img
+              src="images/peel.png"
+              alt="Peeling process"
+              class="product-process-image"
+            />
+              <p>The lifted dirt begins to peel away from the surface,
+                making it easy to wipe off without harsh scrubbing.</p>
+          </div>
+
+          <div class="glass product-process-card">
+            <div class="product-process-label-row">
+              <div class="product-process-label"><span class="product-process-number">3</span> Decomposition</div>
+            </div>
+            <img
+              src="images/dec.png"
+              alt="Decomposition process"
+              class="product-process-image"
+            />
+            
+              <p>Remaining contaminants are broken down into smaller particles,
+              helping remove odors and leaving the surface fresh and clean.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      
+      <section class="ewash-detergent-impact" aria-label="Detergent reduction impact">
+        <div class="ewash-detergent-impact-inner">
+          <h2 class="ewash-detergent-impact-title">
+            What <span>e-WASH</span> Can Do
+          </h2>
+          <div class="ewash-detergent-impact-copy">
+            <p>
+              Reduce the use of synthetic detergents and organic solvents:
+              Minimize the reliance on harmful chemicals, promoting safer and more
+              sustainable cleaning solutions.
+            </p>
+            <p>
+              Minimize wastewater and industrial waste: Reduce wastewater generation,
+              helping to prevent it from becoming industrial waste and lessening
+              environmental impact.
+            </p>
+          </div>
+          <div class="ewash-detergent-impact-visual">
+            <img
+              src="images/det.png"
+              alt="Comparison of synthetic detergent use reduced by e-WASH"
+              class="ewash-detergent-impact-image"
+            />
+          </div>
+        </div>
+      </section>
+     </section>
+
+         <div class="container">
+        <div class="left-panel">
+            <h1 class="title">HOW TO USE</h1>
+            <div class="button-list">
+                <!-- Buttons will be generated by JS or placed here -->
+                <div class="nav-btn active" data-index="0">
+                    <span class="nav-number">1</span>
+                    <span class="nav-text">Cafe and Restaurants</span>
+                </div>
+                <div class="nav-btn" data-index="1">
+                    <span class="nav-number">2</span>
+                    <span class="nav-text">Living Room and Bedroom</span>
+                </div>
+                <div class="nav-btn" data-index="2">
+                    <span class="nav-number">3</span>
+                    <span class="nav-text">Bathroom and Toilet Room</span>
+                </div>
+                <div class="nav-btn" data-index="3">
+                    <span class="nav-number">4</span>
+                    <span class="nav-text">Washing Clothes and Swimwear</span>
+                </div>
+                <div class="nav-btn" data-index="4">
+                    <span class="nav-number">5</span>
+                    <span class="nav-text">Beach and Pool</span>
+                </div>
+                <div class="nav-btn" data-index="5">
+                    <span class="nav-number">6</span>
+                    <span class="nav-text">After Island Hopping</span>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="image-container" id="image-container">
+                <img src="images/19.png" alt="Usage Demo" id="main-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-panel" id="cart-panel" aria-hidden="true" aria-label="Shopping cart">
+      <div class="cart-panel-header">
+        <div class="cart-title">Cart</div>
+        <button type="button" class="close" id="cart-close-btn" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total" id="cart-total">Total: PHP 0.00</div>
+        <button type="button" class="btn btn-success btn-block cart-checkout-btn" id="cart-checkout-btn" disabled>Checkout</button>
+      </div>
+    </aside>
+
+    <section class="benefits-summary-section" aria-label="e-WASH key benefits">
+      <h2 class="benefits-points-heading">Points</h2>
+      <div class="benefits-summary-grid">
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-safety">
+          <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title">High Safety</h3>
+        <p class="benefits-summary-desc">Safe for Families and Pets</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-cleaning">
+          <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title">Excellent Cleaning Power</h3>
+        <p class="benefits-summary-desc">From wiping to oil stains</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-disinfect">
+          <i class="fa-solid fa-virus icon-main" aria-hidden="true"></i>
+          <i class="fa-solid fa-shield-check icon-overlay" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title">High Disinfecting Effect</h3>
+        <p class="benefits-summary-desc">For against viruses and bacteria</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-rust">
+          <i class="fa-solid fa-link icon-main" aria-hidden="true"></i>
+          <i class="fa-solid fa-gear gear-left" aria-hidden="true"></i>
+          <i class="fa-solid fa-gear gear-right" aria-hidden="true"></i>
+          <i class="fa-solid fa-droplet droplet" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title">High Rust Prevention Effect</h3>
+        <p class="benefits-summary-desc">For an important accessory</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-odor">
+          <i class="fa-solid fa-ban-smoking" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title benefits-summary-title--anaerobic">
+          <span class="benefits-summary-title--anaerobic-top">Anaerobic Odor</span>
+          <span class="benefits-summary-title--anaerobic-bottom">Prevention Effect</span>
+        </h3>
+        <p class="benefits-summary-desc">For the unpleasant smell in the room</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-time">
+          <i class="fa-solid fa-stopwatch icon-main" aria-hidden="true"></i>
+          <i class="fa-solid fa-circle-check icon-overlay" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title benefits-summary-title--efficiency">
+          <span class="benefits-summary-title--efficiency-top">Improved Work</span>
+          <span class="benefits-summary-title--efficiency-mid">Efficiency</span>
+          <span class="benefits-summary-title--efficiency-bottom">Saves Time</span>
+        </h3>
+        <p class="benefits-summary-desc">No need to wipe twice</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-cost">
+          <i class="fa-solid fa-coins icon-main" aria-hidden="true"></i>
+          <i class="fa-solid fa-bottle-water bottle" aria-hidden="true"></i>
+          <i class="fa-solid fa-circle-1 icon-overlay" aria-hidden="true"></i>
+        </div>
+        <h3 class="benefits-summary-title">Cost Saving</h3>
+        <p class="benefits-summary-desc">No need to switch between different products, just this one.</p>
+      </article>
+  
+      <article class="benefits-summary-card">
+        <div class="benefits-summary-icon icon-environment">
+          <i class="fa-solid fa-earth-asia icon-main" aria-hidden="true"></i>
+          <span class="sdg-ring" aria-hidden="true"></span>
+        </div>
+        <h3 class="benefits-summary-title">Environmental Protection</h3>
+        <p class="benefits-summary-desc">SDGs starting with water</p>
+      </article>
+        </div>
+      <div class="benefits-summary-action">
+        <a href="points.html" class="btn btn-outline-primary benefits-summary-readmore-btn--section">
+          Read more
+        </a>
+      </div>
+
+      <main class="situation-main">
+        <div class="situation-container">
+            <!-- Left side -->
+            <div class="situation-left">
+                <div class="situation-banner">
+                    <h1>SITUATION (at home)</h1>
+                </div>
+
+                <div class="situation-text-box">
+                    <h2>This guide will show you how to clean and maintain your items using e-WASH, categorized by location and purpose.</h2>
+                    <h2>You'll gradually get the hang of it as you use it!</h2>
+                    <h2>Try it in places not mentioned here as well.</h2>
+                </div>
+            </div>
+
+            <!-- Right side -->
+            <div class="situation-right">
+                <div class="situation-grid">
+
+                    <!-- Kitchen -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/kitchen.png" alt="Kitchen" />
+                            <div class="card-overlay">
+                                <span>KITCHEN</span>
+                            </div>
+                        </div>
+                        <a href="kitchen.html" class="btn btn-sm btn-outline-primary learn-more-btn">Learn more</a>
+                    </div>
+
+                    <!-- Living Room -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/living room.png" alt="Living Room" />
+                            <div class="card-overlay">
+                                <span>LIVING<br />ROOM</span>
+                            </div>
+                        </div>
+                        <a href="livingroom.html" class="btn btn-sm btn-outline-primary learn-more-btn">Learn more</a>
+                    </div>
+
+                    <!-- Accessories -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/Accessories_clothes.jpg" alt="Accessories / Clothes" />
+                            <div class="card-overlay">
+                                <span>ACCESSORIES/<br />CLOTHES</span>
+                            </div>
+                        </div>
+                        <a href="accessories.html" class="btn btn-sm btn-outline-primary learn-more-btn">Learn more</a>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/children's_product.png" alt="Children" />
+                            <div class="card-overlay">
+                                <span>CHILDREN'S<br />PRODUCT</span>
+                            </div>
+                        </div>
+                        <a href="children.html" class="btn btn-sm btn-outline-primary learn-more-btn">Learn more</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    </section>
+
+    <section class="managed-content-section" data-managed-content="product" data-managed-field="html" data-managed-hide-empty aria-label="Managed content"></section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-contact">
+            <div class="footer-brand">e-WASH</div>
+            <span>Phone: 0935-197-2829</span>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=airene.c@mirae-design.com" target="_blank" rel="noopener noreferrer">airene.c@mirae-design.com</a>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/MIRAe.DESIGN.JAPAN" class="footer-icon" aria-label="Visit our Facebook" target="_blank" rel="noopener noreferrer">
+            <img src="images/fb.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/mirae.design.ph?fbclid=IwY2xjawQl6D1leHRuA2FlbQIxMABicmlkETFOQWlsSWhPb2hTTlRBcU82c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvS0z87nFlGZf5T2mRyqgn2NmA91jjtI5BiFqsgjlblkdGImFhO2hSkT0ZhU_aem_HMOxxA1_hFs1rDboID_Mbg" class="footer-icon" aria-label="Visit our Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="images/ig.png" alt="Instagram" />
+          </a>
+        </div>
+        <div class="footer-bottom">
+          &copy; <span id="year"></span> e-WASH. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product-process.js"></script>
+    <script src="js/product-cart.js"></script>
+    <script src="js/content-loader.js"></script>
+  </body>
+</html>

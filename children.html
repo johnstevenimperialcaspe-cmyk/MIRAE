@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-WASH | Children's Product</title>
+    <link rel="stylesheet" href="children.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="kitchen-header">
+        <div class="header-content">
+            <button class="back-btn" onclick="history.back()">
+                &#8592;
+              </button>
+            <h1>CHILDREN'S PRODUCT</h1>
+        </div>
+    </header>
+
+    <div class="scrolling-container">
+        <!-- Motto Section -->
+        <section class="motto-section reveal">
+            <h2 class="motto-text">"IT IS SAFE FOR <span class="highlight">BABIES</span> AND <span
+                    class="highlight">CHILDREN</span>."</h2>
+        </section>
+
+        <!-- 3-Column Age Grid -->
+        <section class="age-grid-section reveal">
+            <div class="age-grid">
+
+                <!-- 1-2 Months -->
+                <div class="age-card-item">
+                    <div class="circle-img-box">
+                        <img src="images/babybottle.png" alt="Baby Bottle 1-2 Months">
+                    </div>
+                    <div class="age-card-content">
+                        <div class="age-tag-pill">1-2 months</div>
+                        <p class="age-card-text">Wash the baby bottles beforehand, spray them with the spray before use,
+                            wait a little while, and then rinse.</p>
+                    </div>
+                </div>
+
+                <!-- 3-4 Months -->
+                <div class="age-card-item">
+                    <div class="circle-img-box">
+                        <img src="images/toys.png" alt="Toys 3-4 Months">
+                    </div>
+                    <div class="age-card-content">
+                        <div class="age-tag-pill">3-4 months</div>
+                        <p class="age-card-text">I sprayed and wiped down everything I could reach, including pacifiers,
+                            toys, baby carriers, chairs, floors, and train handrails.</p>
+                    </div>
+                </div>
+
+                <!-- 5 Months -->
+                <div class="age-card-item">
+                    <div class="circle-img-box">
+                        <img src="images/clothes.png" alt="Clothes 5 Months">
+                    </div>
+                    <div class="age-card-content">
+                        <div class="age-tag-pill">5 months</div>
+                        <p class="age-card-text">I sprayed this on clothes that had leaked and soiled with feces, then
+                            hand-washed them with detergent. It removed both the stain and the smell very well, making
+                            the process much easier.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Baby Bottle Detail (6 Steps) -->
+        <section class="cleaning-section reveal alternate">
+            <div class="section-container">
+                <div class="section-image">
+                    <img src="images/bottles.png" alt="Baby Bottle Deep Cleaning">
+                </div>
+                <div class="section-text">
+                    <h2 class="appliance-name">BABY BOTTLE</h2>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <span class="step-number">01</span>
+                            <div class="step-info">
+                                <p>Disassemble the baby bottle and rinse it lightly with water.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">02</span>
+                            <div class="step-info">
+                                <p>Pour undiluted e-WASH into the pot.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">03</span>
+                            <div class="step-info">
+                                <p>Immerse all the washed parts in the pot.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">04</span>
+                            <div class="step-info">
+                                <p>Heat the pot until small bubbles appear around the edges, then turn off the heat.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">05</span>
+                            <div class="step-info">
+                                <p>Leave all the parts submerged in the e-WASH in the pot for 5 to 10 minutes.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">06</span>
+                            <div class="step-info">
+                                <p>Remove all parts from the pot, rinse them lightly with water, and then wipe off any
+                                    excess moisture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('active');
+        });
+      });
+    </script>
+    
+</body>
+
+</html>

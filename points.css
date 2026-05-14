@@ -1,0 +1,449 @@
+:root {
+  --points-title: var(--text-main);
+  --card-bg: #ffffff;
+  --card-border: var(--green);
+  --card-radius: 22px;
+  --thumb-width: 210px;
+  --thumb-height: 190px;
+  --body-text: #111111;
+  --label-text: #111111;
+}
+
+.points-title {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--points-title);
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.points-title-accent {
+  color: var(--green);
+}
+
+.points-hero {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  padding: 28px 6vw;
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fbfdff;
+  font-family: "Poppins", sans-serif;
+  color: #a9afc0;
+}
+
+.top-nav .nav-links a {
+  color: #111111;
+}
+
+.wrap {
+  width: min(94vw, 1160px);
+  margin: 22px auto 30px;
+  display: grid;
+  gap: 16px;
+}
+
+.points-content {
+  margin-top: 52px;
+  margin-bottom: 24px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: var(--card-radius);
+  min-height: var(--thumb-height);
+  display: grid;
+  grid-template-columns: var(--thumb-width) 1fr;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(var(--green-rgb), 0.09);
+}
+
+/* Alternate cards: odd image left, even image right */
+.feature-card:nth-child(even) {
+  grid-template-columns: 1fr var(--thumb-width);
+}
+
+.feature-card:nth-child(even) .thumb {
+  order: 2;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--card-radius);
+  border-bottom-right-radius: var(--card-radius);
+}
+
+.feature-card:nth-child(even) .content {
+  order: 1;
+  padding: 22px 16px 20px 26px;
+}
+
+.thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+  position: relative;
+  background-color: #eceef2;
+  border-top-left-radius: var(--card-radius);
+  border-bottom-left-radius: var(--card-radius);
+}
+
+.thumb::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  width: 122px;
+  height: 82px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translateX(-50%);
+}
+
+.thumb-risk::before {
+  content: none;
+}
+
+.thumb-risk {
+  background-image: url("images/baby.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-risk::after,
+.thumb-cleaning::after,
+.thumb-sanitize::after,
+.thumb-deodorant::after,
+.thumb-rustproof::after,
+.thumb-productivity::after,
+.thumb-cost::after,
+.thumb-eco::after {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  color: var(--label-text);
+  font-size: 15px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transform: translateX(-50%);
+  width: 182px;
+  padding: 0 6px;
+  text-align: center;
+  white-space: normal;
+}
+
+.thumb-cleaning::before {
+  content: none;
+}
+
+.thumb-cleaning {
+  background-image: url("images/cleaning.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-sanitize::before {
+  content: none;
+}
+
+.thumb-sanitize {
+  background-image: url("images/disinfect.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-deodorant::before {
+  content: none;
+}
+
+.thumb-deodorant {
+  background-image: url("images/anaerobic.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-rustproof::before {
+  content: none;
+}
+
+.thumb-rustproof {
+  background-image: url("images/stove.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-productivity::before {
+  content: none;
+}
+
+.thumb-productivity {
+  background-image: url("images/prod.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-cost::before {
+  content: none;
+}
+
+.thumb-cost {
+  background-image: url("images/cost.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-eco::before {
+  content: none;
+}
+
+.thumb-eco {
+  background-image: url("images/envi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumb-risk::after {
+  content: none;
+}
+
+.thumb-cleaning::after {
+  content: "CLEANING";
+}
+
+.thumb-sanitize::after {
+  content: "SANITIZE";
+}
+
+.thumb-deodorant::after {
+  content: "DEODORANT";
+}
+
+.thumb-rustproof::after {
+  content: "RUST-PROOFING / ANTI-OXIDATION";
+  width: 188px;
+  line-height: 1.12;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.thumb-productivity::after {
+  content: "RAISE PRODUCTIVITY";
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.thumb-cost::after {
+  content: "COST REDUCTION";
+}
+
+.thumb-eco::after {
+  content: "ECO FRIENDLY";
+}
+
+.content {
+  padding: 22px 26px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feature-card--tight .content {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--green);
+}
+
+.title-badge {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.62em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #111111;
+  vertical-align: middle;
+}
+
+.thumb::after {
+  content: none !important;
+}
+
+.feature-card--tight h2 {
+  font-size: clamp(1.2rem, 1.65vw, 1.56rem);
+}
+
+p {
+  margin: 0;
+  margin-left: 0;
+  text-indent: 0;
+  padding-left: 0;
+  text-align: justify;
+  word-spacing: normal;
+  font-size: clamp(0.92rem, 1.08vw, 1.02rem);
+  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--body-text);
+}
+
+/* Override global .feature-card p from styles.css */
+.wrap .feature-card p {
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 0 !important;
+  text-align: justify !important;
+  color: #000 !important;
+}
+
+/* Disable hover interaction for points page cards */
+.wrap .feature-card:hover,
+.wrap .feature-card:focus-visible {
+  transform: none !important;
+  box-shadow: 0 6px 18px rgba(var(--green-rgb), 0.09) !important;
+}
+
+.wrap .feature-card:hover::after,
+.wrap .feature-card:focus-visible::after {
+  opacity: 0 !important;
+}
+
+/* Make cards non-interactive (not clickable) and remove pointer cursor */
+.wrap .feature-card {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* Ensure any inner elements also don't receive pointer events */
+.wrap .feature-card * {
+  pointer-events: none !important;
+}
+
+
+
+
+
+.feature-card--tight p {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    width: min(95vw, 980px);
+  }
+
+  :root {
+    --thumb-width: 188px;
+    --thumb-height: 172px;
+  }
+
+  .feature-card {
+    border-radius: 20px;
+  }
+
+  .feature-card:nth-child(even) .content {
+    padding: 18px 14px 16px 20px;
+  }
+
+  .content {
+    padding: 18px 20px 16px 14px;
+    gap: 8px;
+  }
+
+  h2 {
+    font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  }
+
+  p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 760px) {
+  .points-hero {
+    min-height: 140px;
+    padding: 20px 5vw;
+  }
+
+  .wrap {
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .points-content {
+    margin-top: 38px;
+  }
+
+  .feature-card {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .feature-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .thumb {
+    width: 100%;
+    min-height: 168px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    order: 1;
+  }
+
+  .feature-card:nth-child(even) .thumb {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 20px;
+  }
+
+  .content {
+    padding: 16px 16px 18px;
+    order: 2;
+  }
+
+  .feature-card:nth-child(even) .content {
+    padding: 16px 16px 18px;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-WASH | All-in-One Situation Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================================
+         1. MAIN SELECTION VIEW (GRID)
+         ============================================================ -->
+    <main id="main-grid" class="situation-main">
+        <div class="situation-container">
+            <div class="situation-left">
+                <div class="situation-banner">
+                    <h1>SITUATION (at home)</h1>
+                </div>
+                <div class="situation-text">
+                    <p class="text-bold">This guide will show you how to clean and maintain your items using e-WASH, categorized by location and purpose.</p>
+                    <p class="text-bold">You'll gradually get the hang of it as you use it!</p>
+                    <p class="text-green">Try it in places not mentioned here as well.</p>
+                </div>
+            </div>
+
+            <div class="situation-right">
+                <div class="situation-grid">
+                    <!-- Kitchen Card -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/kitchen.png" alt="Kitchen" />
+                            <div class="card-overlay"><span>KITCHEN</span></div>
+                        </div>
+                        <button onclick="showView('kitchen')" class="learn-more-btn">Learn more</button>
+                    </div>
+
+                    <!-- Living Room Card -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/living room.png" alt="Living Room" />
+                            <div class="card-overlay"><span>LIVING<br />ROOM</span></div>
+                        </div>
+                        <button onclick="showView('livingroom')" class="learn-more-btn">Learn more</button>
+                    </div>
+
+                    <!-- Accessories Card -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/Accessories_clothes.png" alt="Accessories" />
+                            <div class="card-overlay"><span>ACCESSORIES/<br />CLOTHES</span></div>
+                        </div>
+                        <button onclick="showView('accessories')" class="learn-more-btn">Learn more</button>
+                    </div>
+
+                    <!-- Children's Card -->
+                    <div class="situation-card">
+                        <div class="card-image-box">
+                            <img src="images/children's_product.png" alt="Children" />
+                            <div class="card-overlay"><span>CHILDREN'S<br />PRODUCT</span></div>
+                        </div>
+                        <button onclick="showView('children')" class="learn-more-btn">Learn more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================================
+         2. KITCHEN SECTION
+         ============================================================ -->
+    <div id="kitchen-view" class="detail-view hidden">
+        <header class="detail-header">
+            <button onclick="goHome()" class="back-btn">← BACK</button>
+            <h1>KITCHEN</h1>
+        </header>
+        <div class="scrolling-content">
+            <!-- Hero -->
+            <section class="kitchen-hero reveal">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-desc">Washing ingredients keeps them fresh and safe, and it's also great for cleaning and disinfecting cooking utensils!</p>
+                        <p class="hero-desc">You'll really appreciate the ease of use of e-WASH when it comes to maintaining hygiene in your kitchen.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/kitchen_full.png" alt="Kitchen" class="parallax-img">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Stove -->
+            <section class="cleaning-section reveal alternate">
+                <div class="section-container">
+                    <div class="section-image"><img src="images/stove.jpg" alt="Stove"></div>
+                    <div class="section-text">
+                        <h2 class="appliance-name">STOVE</h2>
+                        <div class="step-list">
+                            <div class="step-item"><span class="step-number">01</span><div class="step-info"><h4>Heat up the e-WASH</h4><p>Pour the undiluted e-WASH, or a solution diluted to 2:1 volume and boiled, into a basin.</p></div></div>
+                            <div class="step-item"><span class="step-number">02</span><div class="step-info"><h4>Soak the parts</h4><p>Soak the burner cap and other parts for 5-10 minutes.</p></div></div>
+                            <div class="step-item"><span class="step-number">03</span><div class="step-info"><h4>Scrub & Rinse</h4><p>Scrub with a sponge and rinse with tap water.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cutting Board -->
+            <section class="cleaning-section reveal">
+                <div class="section-container">
+                    <div class="section-text">
+                        <h2 class="appliance-name">CUTTING BOARD</h2>
+                        <div class="step-list">
+                            <div class="step-item"><span class="step-number">01</span><div class="step-info"><h4>Spray it on</h4><p>Spray e-WASH evenly into the small scratches on the cutting board.</p></div></div>
+                            <div class="step-item"><span class="step-number">02</span><div class="step-info"><h4>Scrub & Rinse</h4><p>Scrub away dirt with a sponge and rinse with tap water.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="section-image"><img src="images/cuttingboard.jpg" alt="Cutting Board"></div>
+                </div>
+            </section>
+
+            <!-- Microwave -->
+            <section class="cleaning-section reveal alternate">
+                <div class="section-container">
+                    <div class="section-image"><img src="images/microwave.jpg" alt="Microwave"></div>
+                    <div class="section-text">
+                        <h2 class="appliance-name">MICROWAVE</h2>
+                        <div class="step-list">
+                            <div class="step-item"><span class="step-number">01</span><div class="step-info"><h4>Spray & Wipe</h4><p>For regular cleaning, simply spray the cleaner directly into the oven and wipe it off.</p></div></div>
+                            <div class="step-item"><span class="step-number">02</span><div class="step-info"><h4>Deep Clean</h4><p>Add 30ml of e-WASH and heat until it evaporates inside.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         3. LIVING ROOM SECTION
+         ============================================================ -->
+    <div id="livingroom-view" class="detail-view hidden">
+        <header class="detail-header">
+            <button onclick="goHome()" class="back-btn">← BACK</button>
+            <h1>LIVING ROOM</h1>
+        </header>
+        <div class="scrolling-content">
+            <section class="kitchen-hero reveal">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-desc">Using e-WASH to clean furniture and other items makes removing dirt easy.</p>
+                        <p class="hero-desc">Furthermore, its antibacterial and deodorizing properties allow you to safely address unpleasant odors.</p>
+                    </div>
+                    <div class="hero-image"><img src="images/living room.png" alt="Living Room" class="parallax-img"></div>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section class="cleaning-section reveal alternate">
+                <div class="section-container">
+                    <div class="section-image"><img src="images/table.jpg" alt="Table"></div>
+                    <div class="section-text">
+                        <h2 class="appliance-name">TABLE</h2>
+                        <div class="step-list">
+                            <div class="step-item"><span class="step-number">01</span><div class="step-info"><h4>Spray it on</h4><p>Spray e-WASH evenly onto the soiled area.</p></div></div>
+                            <div class="step-item"><span class="step-number">02</span><div class="step-info"><h4>Wipe</h4><p>Wipe with a dry cloth after waiting a few seconds.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Floor -->
+            <section class="cleaning-section reveal">
+                <div class="section-container">
+                    <div class="section-text">
+                        <h2 class="appliance-name">FLOOR</h2>
+                        <div class="step-list">
+                            <div class="step-item"><span class="step-number">01</span><div class="step-info"><h4>Dilute</h4><p>Dilute it to more than 10 times its original concentration.</p></div></div>
+                            <div class="step-item"><span class="step-number">02</span><div class="step-info"><h4>Spray & Wipe</h4><p>Spray diluted e-WASH and wipe away the loosened dirt.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="section-image"><img src="images/floor.jpg" alt="Floor"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         4. ACCESSORIES/CLOTHES SECTION
+         ============================================================ -->
+    <div id="accessories-view" class="detail-view hidden">
+        <header class="detail-header">
+            <button onclick="goHome()" class="back-btn">← BACK</button>
+            <h1>ACCESSORIES & CLOTHES</h1>
+        </header>
+        <div class="scrolling-content">
+            <section class="kitchen-hero reveal">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-desc">Keep your personal items and clothes fresh and clean every day.</p>
+                        <p class="hero-desc">e-WASH effectively removes oils and odors from common accessories.</p>
+                    </div>
+                    <div class="hero-image"><img src="images/Accessories_clothes.png" alt="Accessories"></div>
+                </div>
+            </section>
+            <!-- Add categories here similar to others -->
+        </div>
+    </div>
+
+    <!-- ============================================================
+         5. CHILDREN'S PRODUCT SECTION
+         ============================================================ -->
+    <div id="children-view" class="detail-view hidden">
+        <header class="detail-header">
+            <button onclick="goHome()" class="back-btn">← BACK</button>
+            <h1>CHILDREN'S PRODUCTS</h1>
+        </header>
+        <div class="scrolling-content">
+            <section class="kitchen-hero reveal">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-desc">Safety is priority when it comes to children's products.</p>
+                        <p class="hero-desc">e-WASH is chemical-free, making it the perfect choice for toys and bottles.</p>
+                    </div>
+                    <div class="hero-image"><img src="images/children's_product.png" alt="Children"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

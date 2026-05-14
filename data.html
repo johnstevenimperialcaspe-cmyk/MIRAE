@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-WASH | Data</title>
+    <link rel="icon" type="image/png" href="images/MD.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="data.css?v=20260415-test-title-center" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="data-page">
+    <header class="top-nav">
+      <div class="logo-area">
+        <a href="index.html">
+          <img
+            src="images/MD.png"
+            alt="e-WASH powered by MIRAE"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="data.html" class="active">Data</a>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contacts</a>
+      </nav>
+    </header>
+
+    <main class="section">
+    <p class="managed-content-intro managed-content-intro-inline" data-managed-content="data" data-managed-field="intro" data-managed-hide-empty></p>
+    <p class="managed-content-subtitle" data-managed-content="data" data-managed-field="subtitle" data-managed-hide-empty></p>
+     
+    <section class="minimal-gallery-section" id="legalities">
+      <h2 class="section-title">LEGALITIES</h2>
+      <div class="gallery-container">
+          <div class="left-panel">
+              <div class="main-image-box" id="leg-glass-frame">
+                  <img id="leg-main-img" src="images/FDA.jpg" alt="FDA">
+              </div>
+              <div class="description-pill" id="leg-main-desc">Food and Drug Administration Certification</div>
+          </div>
+
+          <div class="right-panel">
+              <div class="thumbnail-grid">
+                  <div class="thumb active" onclick="setLegalities(0)">
+                      <img src="images/FDA.jpg" alt="FDA">
+                  </div>
+                  <div class="thumb" onclick="setLegalities(1)">
+                      <img src="images/corp.jpg" alt="Corp">
+                  </div>
+                  <div class="thumb" onclick="setLegalities(2)">
+                      <img src="images/distributor.jpg" alt="Distributor">
+                  </div>
+                  <div class="thumb" onclick="setLegalities(3)">
+                      <img src="images/registration.jpg" alt="Reg">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="slider-section" id="certificates">
+      <h2 class="section-title">CERTIFICATES</h2>
+      <div class="slider-container" id="cert-slider-container">
+          <div class="slider-track" id="cert-slider-track">
+              <div class="slider-item" data-index="0">
+                  <img src="images/Cert.jpg" alt="Cert">
+              </div>
+              <div class="slider-item" data-index="1">
+                  <img src="images/ElNido.jpg" alt="ElNido 1">
+              </div>
+              <div class="slider-item" data-index="2">
+                  <img src="images/ElNidoo.jpg" alt="ElNido 2">
+              </div>
+          </div>
+      </div>
+
+      <div class="slider-description-box" id="cert-slider-desc">
+          Certificate of Authorized Exclusive Distributor
+      </div>
+
+      <div class="slider-dots" id="cert-slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+      </div>
+  </section>
+  
+<!-- Super Sol / e-WASH test switch section (HTML structure used by CSS + JS) -->
+<section class="data-section" id="test-jfrl">
+    <!-- Top pill toggle buttons -->
+    <div class="test-switch" aria-label="Test category navigation" role="tablist">
+        <button type="button" class="test-switch-btn is-active" role="tab" aria-selected="true" data-test="ewash">
+            e-WASH
+        </button>
+        <button type="button" class="test-switch-btn" role="tab" aria-selected="false" data-test="supersol">
+            Super Sol
+        </button>
+    </div>
+    <h2 class="section-title" id="test-section-title"><span class="ewash-word">e-WASH</span> Test</h2>
+
+    <!-- e-WASH panel (shown by default) -->
+    <div class="test-panel is-active" data-test-panel="ewash">
+        <div class="jfrl-dual-column">
+            <div class="jfrl-col">
+                <div class="jfrl-col-text">
+                    <h3 class="jfrl-col-title">24-hour skin occlusion patch test<br>Skin irritation index: 0.0,
+                        determined to be a safe product</h3>
+                </div>
+                <div class="jfrl-glass-card">
+                    <div class="jfrl-col-image">
+                        <img src="images/jfrl1.png" alt="Skin Irritation Test Report">
+                    </div>
+                </div>
+            </div>
+
+            <div class="jfrl-col">
+                <div class="jfrl-col-text">
+                    <h3 class="jfrl-col-title">Escherichia coli bactericidal effect test<br>e-WASH sterilizes E. coli in
+                        30 seconds</h3>
+                </div>
+                <div class="jfrl-glass-card">
+                    <div class="jfrl-col-image">
+                        <img src="images/jfrl.png" alt="E. coli Test Report">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Super Sol panel (shown when "Super Sol" tab is active) -->
+    <div class="test-panel" data-test-panel="supersol" hidden>
+        <!-- Super Sol top card: report image + "Open Canal Water" analysis -->
+        <section class="super-sol-base-section" aria-label="Super Sol base test">
+            <div class="super-sol-base-card">
+                <div class="super-sol-base-image-wrap">
+                    <img src="images/Wsource.jpg" alt="Intertek open canal water test report for Super Sol" class="super-sol-base-image">
+                </div>
+                <div class="super-sol-base-copy">
+                    <h3 class="super-sol-base-title">Open Canal Water</h3>
+                    <p class="super-sol-base-text">
+                        The test report indicates that the water sample collected from an open canal shows a
+                        Biochemical Oxygen Demand (BOD5) of 711 mg/L, which is significantly high. This suggests
+                        a heavy presence of organic pollutants in the water, meaning there is a large amount of
+                        oxygen required for microbial decomposition. Such a level typically reflects poor water
+                        quality and indicates that the sample is highly contaminated, making it unsuitable for
+                        direct environmental discharge or use without proper treatment.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+        
+        <div class="containers">
+
+            <div class="cards">
+              <div class="image-box">
+                <img src="images/OC.jpg" alt="Open Canal Water">
+              </div>
+              <h2>Open Canal Water</h2>
+            </div>
+          
+            <div class="cards">
+              <div class="image-box">
+                <img src="images/SWA.jpg" alt="Waste Water A">
+              </div>
+              <h2>Waste Water A</h2>
+            </div>
+          
+            <div class="cards">
+              <div class="image-box">
+                <img src="images/SWA1.jpg" alt="Waste Water A1">
+              </div>
+              <h2>Waste Water A1</h2>
+            </div>
+          
+          </div>
+
+        <!-- Super Sol result cards with inline drawer descriptions -->
+        <div class="super-sol-results">
+            <!-- Waste Water A card (right-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">Waste Water A</h3>
+                <img src="images/wwa.jpg" alt="Waste Water A" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  The test report shows that the wastewater sample (Wastewater A) has
+                       a Biochemical Oxygen Demand (BOD₅) of 12 mg/L, indicating a relatively low level of organic pollution.
+                       This suggests that the water contains a smaller amount of biodegradable material and requires less
+                       oxygen for decomposition, reflecting better water quality compared to heavily polluted samples.
+                       Overall, the result implies that the wastewater is within a more acceptable range and may be suitable for discharge,
+                       depending on applicable environmental standards.
+                </p>
+                <button type="button" class="wwa-drawer-toggle" aria-expanded="false" aria-controls="wwa-drawer-panel">
+                    &#8250;
+                </button>
+                <aside class="wwa-drawer-panel" id="wwa-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">Waste Water A Analysis</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+
+            <!-- Sample A card (left-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer has-inline-drawer-left" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">Waste Water A Sample</h3>
+                <img src="images/SA.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  This sample reflects relatively clean and stable water conditions. The low Chemical Oxygen Demand (COD = 25 mg/L) 
+                  means there is only a small amount of organic pollution present, 
+                  while the Total Suspended Solids (3 mg/L) indicate the water is clear 
+                  with very minimal particles. The ammonia (0.2 mg/L) and phosphate (0.2 mg/L) 
+                  levels are low, which reduces the risk of nutrient pollution or algal blooms, and the dissolved oxygen 
+                  (5.5 mg/L) is sufficient to support aquatic life.
+                   Although the pH of 9.1 is slightly alkaline, it is still generally tolerable, 
+                   so overall this water is considered good quality and not heavily polluted.
+                </p>
+                <button type="button" class="wwa-drawer-toggle is-left" aria-expanded="false" aria-controls="wwa1-drawer-panel">
+                    &lsaquo;
+                </button>
+                <aside class="wwa-drawer-panel is-left" id="wwa1-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">Waste Water A Sample</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+
+            <!-- Waste Water A1 card (right-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">Waste Water A1</h3>
+                <img src="images/wwa1.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  The test result for Wastewater A1 shows a Biochemical Oxygen Demand (BOD₅) of 33 mg/L, indicating a
+                   relatively high level of organic pollution in the sample. This suggests that there is a significant
+                    amount of biodegradable organic matter present, which can consume dissolved oxygen in the water and
+                     potentially harm aquatic life if discharged untreated. Compared to typical clean water standards,
+                   this level reflects the need for proper wastewater treatment before release into the environment.
+                </p>
+                <button type="button" class="wwa-drawer-toggle" aria-expanded="false" aria-controls="mnlb-drawer-panel">
+                    &#8250;
+                </button>
+                <aside class="wwa-drawer-panel" id="mnlb-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">Waste Water A1 Description</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+
+            <!-- Sample A1 card (left-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer has-inline-drawer-left" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">Waste Water A1 Sample</h3>
+                <img src="images/SA1.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  This sample shows signs of significant pollution and environmental stress. The high COD (66 mg/L) 
+                  indicates a large amount of organic matter, which consumes oxygen during decomposition, while the Total 
+                  Suspended Solids (28 mg/L) suggest the water is more turbid or dirty. Elevated ammonia (1.7 mg/L) 
+                  and phosphate (1.3 mg/L) levels point to nutrient contamination, possibly from wastewater or runoff, 
+                  which can trigger algal blooms and further degrade water quality. The most critical issue is the low 
+                  dissolved oxygen (1.2 mg/L), which is too low to support most aquatic organisms and may lead to fish kills; 
+                  despite the pH of 8.8 being acceptable, the overall condition is poor and likely requires treatment before use or discharge.
+                </p>
+                <button type="button" class="wwa-drawer-toggle is-left" aria-expanded="false" aria-controls="mnlb1-drawer-panel">
+                    &lsaquo;
+                </button>
+                <aside class="wwa-drawer-panel is-left" id="mnlb1-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">Waste Water A1 Sample</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+            
+            <!-- MNL Water B card (right-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">MNL Water B</h3>
+                <img src="images/wb.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  The MLA Water B sample recorded a BOD₅ value of 12 mg/L, which indicates a lower concentration of organic pollutants
+                   compared to the wastewater sample. While this level is considerably cleaner, it still suggests the presence of some
+                    biodegradable material in the water. The result implies moderate water quality, but depending on regulatory standards,
+                     further treatment or monitoring may still be necessary to ensure environmental safety.
+                </p>
+                <button type="button" class="wwa-drawer-toggle" aria-expanded="false" aria-controls="mnlb-drawer-panel">
+                    &#8250;
+                </button>
+                <aside class="wwa-drawer-panel" id="mnlb-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">MNL Water B Description</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+
+            <!-- Sample B card (left-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer has-inline-drawer-left" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">MNL Water B Sample</h3>
+                <img src="images/SB.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  This sample indicates relatively clean water with low contamination levels. The COD (26 mg/L) suggests only a 
+                  moderate amount of organic matter, meaning there isn’t heavy pollution consuming oxygen, while the Total Suspended Solids 
+                  (4 mg/L) show the water is fairly clear with minimal particles. The ammonia (0.10 mg/L) and phosphate (0.2 mg/L) are very 
+                  low, which is a good sign because it means there is little nutrient pollution—reducing the risk of algal blooms or eutrophication. 
+                  The dissolved oxygen (4.5 mg/L) is slightly below the ideal level (usually ~5 mg/L or higher for healthy ecosystems), 
+                  so while aquatic life can still survive, more sensitive species might be stressed. The pH of 9.1 indicates the water is alkaline. Overall, 
+                  the water is acceptable and fairly clean, but with minor concerns on oxygen level and alkalinity that may need observation.
+                </p>
+                <button type="button" class="wwa-drawer-toggle is-left" aria-expanded="false" aria-controls="mnlb1-drawer-panel">
+                    &lsaquo;
+                </button>
+                <aside class="wwa-drawer-panel is-left" id="mnlb1-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">MNL Water B Sample</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+              
+             <!-- MNL Water B1 card (right-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">MNL Water B1</h3>
+                <img src="images/wb1.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  The MLA Water B1 sample also shows a BOD₅ result of 12 mg/L, matching the value obtained for MLA Water B.
+                   This consistency suggests similar water conditions and levels of organic content between the two samples.
+                    Although the pollution load is relatively low compared to wastewater, the presence of measurable BOD
+                     indicates that the water is not entirely free of organic
+                   contaminants and should still be assessed for compliance with applicable water quality standards.
+                </p>
+                <button type="button" class="wwa-drawer-toggle" aria-expanded="false" aria-controls="mnlb-drawer-panel">
+                    &#8250;
+                </button>
+                <aside class="wwa-drawer-panel" id="mnlb-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">MNL Water B Description</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+            
+            <!-- MNL Water B1 card (left-opening drawer) -->
+            <article class="super-sol-result-card has-inline-drawer has-inline-drawer-left" role="button" tabindex="0" aria-pressed="false">
+                <h3 class="super-sol-result-title">MNL Water B1 Sample</h3>
+                <img src="images/SB1.jpg" alt="Waste Water A1" class="super-sol-result-image">
+                <p class="super-sol-result-interpretation" hidden>
+                  The water sample is slightly alkaline with a pH of 8.4, which falls within the acceptable range for safe water. 
+                  Its chemical oxygen demand is low at 25 mg/L, indicating minimal organic pollution. The total suspended solids 
+                  are very low at less than 3 mg/L, showing that the water is clear and free of significant particulate matter. 
+                  Ammonia and phosphate levels are negligible, both below 0.2 mg/L, suggesting there is no contamination from 
+                  sewage or fertilizers and little risk of algal blooms. The dissolved oxygen level is 5.0 mg/L, which is sufficient 
+                  to support aquatic life, though higher levels would be more favorable for sensitive species. Altogether, these results 
+                  demonstrate that the water is clean, with good clarity, low nutrient content, and adequate oxygenation, making it 
+                  suitable for general use and supportive of a healthy aquatic environment.
+                </p>
+                <button type="button" class="wwa-drawer-toggle is-left" aria-expanded="false" aria-controls="mnlb1-drawer-panel">
+                    &lsaquo;
+                </button>
+                <aside class="wwa-drawer-panel is-left" id="mnlb1-drawer-panel" aria-hidden="true">
+                    <h4 class="wwa-drawer-title">MNL Water B1 Sample</h4>
+                    <p class="wwa-drawer-text"></p>
+                </aside>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+  <section class="data-section ewash-only-section" id="test-viruses">
+      <h2 class="section-title">VIRUS STERILIZATION TEST</h2>
+      <div class="test-wrapper">
+          <div class="test-gallery" id="test-gallery">
+              <div class="test-thumb" id="thumb-0" onclick="toggleTestImage(0)">
+                  <img src="images/norovirus.png" alt="Norovirus">
+              </div>
+              <div class="test-thumb" id="thumb-1" onclick="toggleTestImage(1)">
+                  <img src="images/covid.png" alt="COVID-19">
+              </div>
+              <div class="test-thumb" id="thumb-2" onclick="toggleTestImage(2)">
+                  <img src="images/influenza.png" alt="Influenza A">
+              </div>
+              <div class="test-thumb" id="thumb-3" onclick="toggleTestImage(3)">
+                  <img src="images/legionella.png" alt="Legionella">
+              </div>
+          </div>
+
+          <div class="test-content">
+              <h1 class="test-title">Can sterilize all kinds of viruses and bacteria</h1>
+              <div class="test-description-box">
+                  <p>
+                      Evaluation of avian influenza and airborne virus removal performance,
+                      inactivation tests for E. coli, Salmonella, O157, human herpes virus,
+                      and canine parvovirus. Deodorization, stinging, and many other tests
+                      have been performed.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+    </main>
+
+        <section class="managed-content-section" data-managed-content="data" data-managed-field="html" data-managed-hide-empty aria-label="Managed content"></section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-contact">
+            <div class="footer-brand">e-WASH</div>
+            <span>Phone: 0935-197-2829</span>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=airene.c@mirae-design.com" target="_blank" rel="noopener noreferrer">airene.c@mirae-design.com</a>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/MIRAe.DESIGN.JAPAN" class="footer-icon" aria-label="Visit our Facebook" target="_blank" rel="noopener noreferrer">
+            <img src="images/fb.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/mirae.design.ph?fbclid=IwY2xjawQl6D1leHRuA2FlbQIxMABicmlkETFOQWlsSWhPb2hTTlRBcU82c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvS0z87nFlGZf5T2mRyqgn2NmA91jjtI5BiFqsgjlblkdGImFhO2hSkT0ZhU_aem_HMOxxA1_hFs1rDboID_Mbg" class="footer-icon" aria-label="Visit our Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="images/ig.png" alt="Instagram" />
+          </a>
+        </div>
+        <div class="footer-bottom">
+          &copy; <span id="year"></span> e-WASH. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+        <script src="js/content-loader.js"></script>
+  </body>
+</html>
+

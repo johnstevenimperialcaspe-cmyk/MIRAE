@@ -1,0 +1,49 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="mirae-setup-guide">MIRAE Setup Guide</h1>
+<p>This project includes a static frontend plus an optional PHP/MySQL admin dashboard.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Windows 10 or later</li>
+<li>XAMPP 8.0+ (Apache + MySQL)</li>
+<li>PHP 8.0+</li>
+<li>MySQL 5.7+ / MariaDB 10.4+</li>
+<li>Modern browser (Chrome, Edge, Firefox)</li>
+</ul>
+<h2 id="option-a-run-frontend-only-static">Option A: Run Frontend Only (Static)</h2>
+<p>1) Open index.html in a browser, or
+2) Use a simple static server (optional).</p>
+<p>This mode does not support admin login, product uploads, or content editing.</p>
+<h2 id="option-b-run-full-system-php-mysql">Option B: Run Full System (PHP + MySQL)</h2>
+<p>1) Install XAMPP
+   - Download from https://www.apachefriends.org</p>
+<p>2) Move the project into XAMPP htdocs
+   - Example: C:\xampp\htdocs\mirae</p>
+<p>3) Start Apache and MySQL in XAMPP Control Panel</p>
+<p>4) Create the database
+   - Open http://localhost/phpmyadmin
+   - Create a database named mirae_db
+   - Import the SQL file: database/mirae_db.sql</p>
+<p>5) Verify database connection
+   - Check config/db.php and update host/user/password if needed</p>
+<p>6) Open the site
+   - Public site: http://localhost/mirae/index.html
+   - Admin login: http://localhost/mirae/login.php
+   - Default admin: admin / admin123</p>
+<h2 id="content-management">Content Management</h2>
+<ul>
+<li>Update Intro, Subtitle, and HTML body in the Admin Content pages.</li>
+<li>Changes appear on the public pages in the managed content slots.</li>
+</ul>
+<h2 id="product-image-uploads">Product Image Uploads</h2>
+<ul>
+<li>Images are saved to uploads/products.</li>
+<li>Ensure the uploads folder is writable by Apache.</li>
+<li>Allowed formats: JPG, JPEG, PNG.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>Blank page or PHP errors: check Apache and PHP versions.</li>
+<li>DB connection errors: verify config/db.php credentials.</li>
+<li>Missing content: confirm data exists in content_pages table.</li>
+</ul>
+</body></html>

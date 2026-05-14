@@ -1,0 +1,292 @@
+/* children.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #7db68b;
+    --green-rgb: 125, 182, 139;
+    --dark: #1f1f1f;
+    --text-main: #222222;
+    --text-muted: #666666;
+    --bg: #ffffff;
+    --bg-alt: #f6f7f8;
+    --border-subtle: #e2e4e7;
+    --radius-lg: 18px;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Compact Header */
+.kitchen-header {
+    background-color: var(--green);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+.scrolling-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    /* Reduced padding */
+}
+
+/* Motto Section */
+.motto-section {
+    padding: 1.5rem 0 1rem 0;
+    /* Tightened */
+    text-align: center;
+}
+
+.motto-text {
+    font-size: 2.2rem;
+    /* Slightly smaller */
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.motto-text .highlight {
+    color: var(--green);
+}
+
+/* Age Grid Section - COMPACTED TO FIT ONE PAGE */
+.age-grid-section {
+    padding: 1rem 0 2rem 0;
+    /* Tightened gaps */
+}
+
+.age-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    /* Tighter gap */
+}
+
+.age-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    /* Ensure container fills grid cell */
+}
+
+/* Circular Image Box - SHRUNK */
+.circle-img-box {
+    width: 210px;
+    /* Reduced from 280px */
+    height: 210px;
+    /* Reduced from 280px */
+    border-radius: 50%;
+    border: 3px solid var(--green);
+    overflow: hidden;
+    background: white;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -70px;
+    /* Adjusted overlap */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.circle-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bordered Card Content - COMPACTED */
+.age-card-content {
+    border: 2px solid var(--green);
+    border-radius: 20px;
+    padding: 85px 1.5rem 2rem 1.5rem;
+    /* Significantly reduced padding */
+    text-align: center;
+    width: 100%;
+    background: white;
+    flex: 1;
+    /* Forces all boxes to be equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.age-tag-pill {
+    display: inline-block;
+    border: 2px solid var(--green);
+    border-radius: 30px;
+    padding: 0.3rem 0;
+    width: 200px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 auto 1.2rem auto;
+}
+
+.age-card-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-main);
+    text-align: justify;
+}
+
+/* Baby Bottle Deep Cleaning (Horizontal) */
+.cleaning-section {
+    padding: 4rem 0 0 0;
+    /* Removed bottom padding */
+}
+
+.cleaning-section:last-of-type {
+    padding-bottom: 0;
+    /* Flush to bottom */
+}
+
+.section-container {
+    display: flex;
+    align-items: center;
+    /* Center vertically to match screenshot */
+    gap: 4rem;
+    width: 100%;
+}
+
+.section-image {
+    flex: 1;
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+}
+
+.section-text {
+    flex: 1.1;
+}
+
+.appliance-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--green);
+    letter-spacing: 2px;
+}
+
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    /* Tighter vertical spacing */
+}
+
+.step-item {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.step-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--green);
+    min-width: 75px;
+    line-height: 1;
+}
+
+.step-info p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .age-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .circle-img-box {
+        width: 220px;
+        height: 220px;
+    }
+
+    .age-card-content {
+        padding-top: 130px;
+    }
+
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-item {
+        text-align: left;
+    }
+
+    .safety-banner {
+        padding: 2rem;
+        clip-path: none;
+        border-radius: 15px;
+    }
+}

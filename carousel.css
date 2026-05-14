@@ -1,0 +1,122 @@
+.water-container {
+    width: 100%;
+    min-height: 600px;
+    padding: 4rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.description-box {
+    flex: 0 0 70%;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid var(--green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.desc-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.desc-image {
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+    display: block;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.perf-tabs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+.perf-tab-btn {
+    width: 100%;
+    padding: 16px 24px;
+    background: #ffffff;
+    border: 2px solid var(--green);
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.perf-tab-btn:hover {
+    background: color-mix(in srgb, var(--green) 12%, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(var(--green-rgb), 0.15);
+}
+
+.perf-tab-btn.active {
+    background: var(--green);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(var(--green-rgb), 0.3);
+}
+
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .description-box {
+        width: 100%;
+        min-height: 400px;
+    }
+    
+    .perf-tabs {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .perf-tab-btn {
+        width: calc(50% - 12px);
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .perf-tab-btn {
+        width: 100%;
+    }
+}
